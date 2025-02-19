@@ -13,7 +13,7 @@ const ToDoItem = ({ id, text, done, handleDelete }) => {
                 <input type="checkbox" />
                 <span>{done ? <del>text</del> : text}</span>
             </div>
-            <button className="delete-btn" onClick={() => handleDelete(id)}>🗑️</button>
+            <button className="delete-btn" onClick={handleDelete}>🗑️</button>
         </li>
     )
 }

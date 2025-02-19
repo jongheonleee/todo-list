@@ -10,7 +10,7 @@ const App = () => {
   // 해당 컴포넌트에서 관리해야할 필드값 정의 
 
   // 기본적으로 보여줄 리스트 
-  const [id, setId] = useState(-1); // 특정 아잉템에 해당하는 id
+  const [id, setId] = useState(0); // 특정 아잉템에 해당하는 id
   const [items, setItems] = useState([{ id : 1, text : "리액트 학습", done : false},
                                       { id : 2, text : "JavaScript 학습", done : false},
                                       { id : 3, text : "CSS 학습", done : false}]); // 기본적으로 보여줄 items
@@ -23,13 +23,12 @@ const App = () => {
     // - 사용자가 누른 아이템의 id가 현재 배열에 있는지 확인
     // - 해당 id에 대응되는 아이템이 있으면 해당 아이템을 제거한다
     const newItems = items.filter(item => item.id !== id);
-    console.log(newItems);
-
+    
     // - items를 업데이트한다 
     setItems(newItems);
 
     // - id를 초기화한다. 
-    setId(-1);
+    setId(0);
 
   };
 
