@@ -11,9 +11,9 @@ const App = () => {
   
   // 기본적으로 보여줄 리스트 
   const [ id, setId ] = useState(-1); // 특정 아잉템에 해당하는 id
-  const [ items, setItems ] = useState([{ id : 1,   text : "리액트 학습",       done : false},
-                                        { id : 2,   text : "JavaScript 학습", done : false},
-                                        { id : 3,   text : "CSS 학습",        done : false}]); // 기본적으로 보여줄 items
+  const [ items, setItems ] = useState([{ id : 1, s : "리액트 학습", done : false},
+                                        { id : 2, text : "JavaScript 학습", done : false},
+                                        { id : 3, text : "CSS 학습", done : false}]); // 기본적으로 보여줄 items
   const [ text, setText ] = useState('');
   const [ done, setDone ] = useState(false);
 
@@ -52,6 +52,7 @@ const App = () => {
 
     // - 아이템 등록 처리 
     const newItem = {id : items.length, text: text, done: false};
+    alert(newItem);
 
     // - 아이템 배열에 추가
     const newItems = [...items, newItem];

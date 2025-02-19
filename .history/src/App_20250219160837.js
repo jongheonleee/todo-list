@@ -52,6 +52,7 @@ const App = () => {
 
     // - 아이템 등록 처리 
     const newItem = {id : items.length, text: text, done: false};
+    alert(newItem);
 
     // - 아이템 배열에 추가
     const newItems = [...items, newItem];

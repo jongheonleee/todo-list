@@ -1,7 +1,7 @@
 import React from "react";
 import "./InputForm.css";
 
-const InputForm = ({ handleSubmit, handleText }) => {
+const InputForm = ({ handleSubmit, handleTitle }) => {
     return (
         <form 
             className="input-area"
@@ -10,14 +10,9 @@ const InputForm = ({ handleSubmit, handleText }) => {
             <input 
                 type="text" 
                 placeholder="할 일을 입력하세요" 
-                onChange={handleText} 
+                onChange={handleTitle} 
             />
-            <button 
-                type="submit"
-                className="add-btn"
-            >
-            +
-            </button>
+            <button className="add-btn">+</button>
         </form>
     );
 }
