@@ -51,7 +51,7 @@ const App = () => {
     }
 
     // - 아이템 등록 처리 
-    const newItem = {id : crypto.randomUUID(), text: text, done: false};
+    const newItem = {id : items.length, text: text, done: false};
 
     // - 아이템 배열에 추가
     const newItems = [...items, newItem];
@@ -61,7 +61,7 @@ const App = () => {
     notify('Item added successfully');
 
     // - 초기화
-    setId('');
+    setId(-1);
     setText('');
     setDone(false);
   };
