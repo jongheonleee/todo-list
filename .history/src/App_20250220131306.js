@@ -27,11 +27,14 @@ const App = () => {
     // - 해당 id에 대응되는 아이템이 있으면 해당 아이템을 제거한다
     const newItems = items.filter(item => item.id !== id);
 
+    // 알림창 띄우기
+    notify('Item deleted successfully');
+
     // - items를 업데이트한다 
     setItems(newItems);
 
     // - id를 초기화한다. 
-    setId('');
+    setId(-1);
 
   };
 
@@ -43,6 +46,7 @@ const App = () => {
 
     // - 작성한 타이틀 유효성 검증 
     if (!isValidText(text)) {
+      notify('please enter a right text');
       return;
     }
 
@@ -53,10 +57,14 @@ const App = () => {
     const newItems = [...items, newItem];
     setItems(newItems);
 
+    // - 아이템 추가되었음을 알림
+    notify('Item added successfully');
+
     // - 초기화
     setId('');
     setText('');
     setDone(false);
+    e.target.value = '';
   };
 
   
@@ -65,23 +73,30 @@ const App = () => {
     setText(e.target.value);
   }
 
-
-  const checkDone = (id) => {
-    const foundItem = items.find(item => item.id === id);
-    if (foundItem) {
-      foundItem.done =!foundItem.done;
-      setItems([...items]);
-    }
-
-    setDone(false);
+  const handleDone = (e) => {
+    // todo-item done/undone 상태 변경
+    setDone(e.target.value);
   }
+
+  const handleEdit = () => {
+    // 수정 버튼을 누르면 해당 아이템의 필드값을 수정함 
+
+  };
+
+  const handleAlert = () => {
+    // 클라이언트에게 창을 띄워서 알림을 통지함 
+
+  };
 
   const clearItems = () => {
     // 모든 아이템을 지움 
-    const newItems = [];
-    setItems(newItems);
+
   }
 
+  // 특정 작업 수행시 알림창 띄우기
+  const notify = (message) =>  {
+      alert(message);
+  }
 
   // 아이템 유효성 검증
   const isValidText = (text) => {
@@ -93,22 +108,21 @@ const App = () => {
     <div className="container">
       <div className="sub-container">
         <h2>📌 To-Do List</h2>
-          {/* 입력 부분  */}
-          <InputForm 
-            handleSubmit={handleSubmit}
-            handleText={handleText}
-            clearItems={clearItems}
-            text={text}
-          />
 
-          {/* todo-list 부분 */}
-          <ToDoList 
-            items={items}
-            handleDelete={handleDelete}
-            checkDone={checkDone}
-          />
+
+        {/* 입력 부분  */}
+        <InputForm 
+          handleSubmit={handleSubmit}
+          handleText={handleText}
+        />
+
+        {/* todo-list 부분 */}
+        <ToDoList 
+          items={items}
+          handleDelete={handleDelete}
+        />
+
       </div>
-
     </div>
   );
 }

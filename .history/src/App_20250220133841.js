@@ -72,8 +72,6 @@ const App = () => {
       foundItem.done =!foundItem.done;
       setItems([...items]);
     }
-
-    setDone(false);
   }
 
   const clearItems = () => {

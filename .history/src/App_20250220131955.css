@@ -80,3 +80,16 @@ input[type="text"] {
 .delete-btn:hover {
   color: darkred;
 }
+
+.clear-btn {
+  background: red;
+  color: white;
+  border: none;
+  padding: 8px 12px;
+  cursor: pointer;
+  border-radius: 5px;
+  position: absolute; /* 부모 컨테이너를 기준으로 위치 설정 */
+  right: 10px; /* 오른쪽에서 10px 간격 */
+  bottom: 10px; /* 아래쪽에서 10px 간격 */
+
+}

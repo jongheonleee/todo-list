@@ -24,7 +24,7 @@ input[type="text"] {
 }
 
 .clear-btn {
-    background: rgb(242, 58, 58);
+    background: rgb(231, 117, 117);
     color: white;
     border: none;
     padding: 8px 12px;
@@ -33,5 +33,5 @@ input[type="text"] {
 }
 
 .clear-btn:hover {
-    background: rgb(246, 9, 9);
+    background: rgb(231, 66, 66);
 }

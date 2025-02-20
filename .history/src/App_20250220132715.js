@@ -53,6 +53,9 @@ const App = () => {
     const newItems = [...items, newItem];
     setItems(newItems);
 
+    // - 아이템 추가되었음을 알림
+    notify('Item added successfully');
+
     // - 초기화
     setId('');
     setText('');
@@ -65,16 +68,6 @@ const App = () => {
     setText(e.target.value);
   }
 
-
-  const checkDone = (id) => {
-    const foundItem = items.find(item => item.id === id);
-    if (foundItem) {
-      foundItem.done =!foundItem.done;
-      setItems([...items]);
-    }
-
-    setDone(false);
-  }
 
   const clearItems = () => {
     // 모든 아이템을 지움 
@@ -98,14 +91,12 @@ const App = () => {
             handleSubmit={handleSubmit}
             handleText={handleText}
             clearItems={clearItems}
-            text={text}
           />
 
           {/* todo-list 부분 */}
           <ToDoList 
             items={items}
             handleDelete={handleDelete}
-            checkDone={checkDone}
           />
       </div>
 

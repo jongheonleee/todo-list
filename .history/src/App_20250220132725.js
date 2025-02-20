@@ -66,16 +66,6 @@ const App = () => {
   }
 
 
-  const checkDone = (id) => {
-    const foundItem = items.find(item => item.id === id);
-    if (foundItem) {
-      foundItem.done =!foundItem.done;
-      setItems([...items]);
-    }
-
-    setDone(false);
-  }
-
   const clearItems = () => {
     // 모든 아이템을 지움 
     const newItems = [];
@@ -98,14 +88,12 @@ const App = () => {
             handleSubmit={handleSubmit}
             handleText={handleText}
             clearItems={clearItems}
-            text={text}
           />
 
           {/* todo-list 부분 */}
           <ToDoList 
             items={items}
             handleDelete={handleDelete}
-            checkDone={checkDone}
           />
       </div>
 

@@ -14,7 +14,7 @@ const ToDoItem = ({ id, text, done, handleDelete, checkDone }) => {
                     type="checkbox"
                     onClick={() => checkDone(id)}
                 />
-                <span>{done ? <del>{text}</del> : text}</span>
+                <span>{done ? <del>text</del> : text}</span>
             </div>
             <button className="delete-btn" onClick={() => handleDelete(id)}>🗑️</button>
         </li>

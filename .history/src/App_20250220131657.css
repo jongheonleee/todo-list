@@ -10,7 +10,6 @@
 }
 
 .sub-container {
-  position: relative; /* 부모 요소를 기준으로 위치 설정 */
   background-color: #D4F1F9; 
   padding: 50px;
   border-radius: 10px;
@@ -79,4 +78,8 @@ input[type="text"] {
 
 .delete-btn:hover {
   color: darkred;
+}
+
+.clear-btn {
+  background-color: red;
 }

@@ -12,9 +12,9 @@ const ToDoItem = ({ id, text, done, handleDelete, checkDone }) => {
             >
                 <input 
                     type="checkbox"
-                    onClick={() => checkDone(id)}
+                    onClick={checkDone(id)}
                 />
-                <span>{done ? <del>{text}</del> : text}</span>
+                <span>{done ? <del>text</del> : text}</span>
             </div>
             <button className="delete-btn" onClick={() => handleDelete(id)}>🗑️</button>
         </li>

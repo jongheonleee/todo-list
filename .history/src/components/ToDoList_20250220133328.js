@@ -2,7 +2,7 @@ import React from "react";
 import ToDoItem from "./ToDoItem";
 import "./ToDoList.css"
 
-const ToDoList = ({ items, handleDelete, checkDone }) => {
+const ToDoList = ({ items, handleDelete }) => {
     return (
         <ul className="todo-list">
             {
@@ -13,7 +13,6 @@ const ToDoList = ({ items, handleDelete, checkDone }) => {
                             text={item.text}
                             done={item.done}
                             handleDelete={handleDelete}
-                            checkDone={checkDone}
                         />
                     )
                 })
